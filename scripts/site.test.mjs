@@ -33,7 +33,8 @@ for (const base of ['', '/liocer.com']) {
 test('Enquiries have an honest email handoff and correctly labelled fields', () => {
   const html = generatePages({ contactEmail: 'info@liocer.com' }).get('/contact/');
   assert.match(html, /mailto:info@liocer.com/);
-  assert.match(html, /open it in your email app/);
+  assert.match(html, /Open email app to send/);
+  assert.match(html, /Send your draft to LIOCER/);
   assert.doesNotMatch(html, /Your enquiry has been received/);
   for (const id of ['name', 'email', 'organization', 'interest', 'timeline', 'message']) {
     assert.match(html, new RegExp(`for="${id}"`));
@@ -51,4 +52,19 @@ test('All self-hosted CSS assets exist', () => {
   for (const [, asset] of css.matchAll(/url\(['"]?\.\/([^)'";]+)['"]?\)/g)) {
     assert.ok(existsSync(path.join('public', asset)), `Missing CSS asset ${asset}`);
   }
+});
+
+test('Header branding and contextual product and project journeys survive subdirectory deployment', () => {
+  const base = '/liocer.com';
+  const pages = generatePages({ base });
+  for (const html of pages.values()) {
+    const header = html.match(/<header[^>]*>[\s\S]*?<\/header>/)[0];
+    assert.match(header, /class="brand-symbol"[^>]*><\/span><span class="wordmark">/);
+  }
+  const hero = pages.get('/').split('</section>')[0];
+  assert.ok(hero.includes('href="/liocer.com/products/klex/">Explore KLEX'));
+  assert.equal(pages.get('/custom-software/').match(/href="\/liocer.com\/contact\/\?interest=custom">Discuss a project/g).length, 2);
+  assert.match(pages.get('/products/klex/'), /Design concept · In development/);
+  const contact = pages.get('/contact/');
+  assert.ok(contact.indexOf('id="name"') < contact.indexOf('class="contact-location"'));
 });

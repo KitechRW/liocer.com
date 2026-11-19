@@ -24,9 +24,20 @@ const form = document.querySelector('#enquiry-form');
 if (interest && form) {
   const requested = new URLSearchParams(location.search).get('interest');
   if ([...interest.options].some(option => option.value === requested)) interest.value = requested;
-  const showTimeline = () => { document.querySelector('#timeline-field').hidden = interest.value !== 'custom'; };
-  showTimeline();
-  interest.addEventListener('change', showTimeline);
+  const headings = {
+    klex: 'Ask about KLEX',
+    custom: 'Discuss your software project',
+    product: 'Ask about our SaaS products',
+    partnership: 'Discuss a partnership'
+  };
+  function updateContext() {
+    const heading = Object.hasOwn(headings, interest.value) ? headings[interest.value] : 'Contact LIOCER';
+    document.querySelector('#contact-title').textContent = heading;
+    document.querySelector('#timeline-field').hidden = interest.value !== 'custom';
+  }
+  updateContext();
+  form.hidden = false;
+  interest.addEventListener('change', updateContext);
   let brief = '';
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -42,8 +53,7 @@ if (interest && form) {
     ].filter((line, index, all) => line || index === 1 || (index > 1 && all[index - 1])).join('\n');
     const email = document.body.dataset.contactEmail;
     const emailLink = document.querySelector('#email-brief');
-    emailLink.hidden = !email;
-    if (email) emailLink.href = `mailto:${email}?subject=${encodeURIComponent(`LIOCER enquiry: ${category}`)}&body=${encodeURIComponent(brief)}`;
+    if (emailLink && email) emailLink.href = `mailto:${email}?subject=${encodeURIComponent(`LIOCER enquiry: ${category}`)}&body=${encodeURIComponent(brief)}`;
     document.querySelector('#brief-content').textContent = brief;
     form.hidden = true;
     document.querySelector('#enquiry-result').hidden = false;

@@ -86,5 +86,9 @@ test('Navigation, page labels, hero and social footer reflect the revised design
   }
   assert.match(home, /href="https:\/\/www\.instagram\.com\/liocerhq\/"/);
   assert.match(home, /href="https:\/\/x\.com\/liocerhq"/);
-  assert.match(home, /href="https:\/\/www\.linkedin\.com\/company\/liocerhq\/"/);
+  assert.match(home, /href="https:\/\/www\.linkedin\.com\/company\/liocer\/"/);
+  assert.match(home, /href="\/custom-software\/"[^>]*>Projects<\/a>/);
+  assert.match(home, /assets\/artworks\/about\.webp/);
+  assert.match(pages.get('/about/'), /assets\/artworks\/about\.webp/);
+  assert.doesNotMatch(readFileSync('src/client.js', 'utf8'), /is-scrolled/);
 });

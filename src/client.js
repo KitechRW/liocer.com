@@ -1,11 +1,5 @@
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#site-navigation');
-const siteHeader = document.querySelector('.site-header');
-function updateHeader() {
-  siteHeader?.classList.toggle('is-scrolled', window.scrollY > 24);
-}
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
 function closeMenu() {
   menu?.setAttribute('aria-expanded', 'false');
   navigation?.classList.remove('is-open');

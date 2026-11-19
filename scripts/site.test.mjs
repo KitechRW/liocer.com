@@ -72,3 +72,19 @@ test('Header branding and contextual product and project journeys survive subdir
   const contact = pages.get('/contact/');
   assert.ok(contact.indexOf('id="name"') < contact.indexOf('<aside>'));
 });
+
+test('Navigation, page labels, hero and social footer reflect the revised design', () => {
+  const pages = generatePages();
+  const home = pages.get('/');
+  assert.match(home, /Software built for<br><span>the way you work\.<\/span>/);
+  assert.doesNotMatch(home, /<p class="eyebrow">Software engineering<\/p>/);
+  for (const html of pages.values()) {
+    assert.doesNotMatch(html, /LIOCER \/ (?:Contact|Products|About|Custom Software)/);
+    const footer = html.split('<footer class="site-footer">')[1];
+    assert.doesNotMatch(footer, /footer-email|mailto:info@liocer.com/);
+    for (const name of ['Instagram', 'X', 'LinkedIn']) assert.match(footer, new RegExp(`aria-label="LIOCER on ${name}"`));
+  }
+  assert.match(home, /href="https:\/\/www\.instagram\.com\/liocerhq\/"/);
+  assert.match(home, /href="https:\/\/x\.com\/liocerhq"/);
+  assert.match(home, /href="https:\/\/www\.linkedin\.com\/company\/liocerhq\/"/);
+});

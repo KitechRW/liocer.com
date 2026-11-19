@@ -59,6 +59,10 @@ test('Header branding and contextual product and project journeys survive subdir
   const pages = generatePages({ base });
   for (const html of pages.values()) {
     const header = html.match(/<header[^>]*>[\s\S]*?<\/header>/)[0];
+    assert.match(header, /href="\/liocer.com\/contact\/">Get in Touch</);
+    const [beforeFooter, footer] = html.split('<footer class="site-footer">');
+    assert.doesNotMatch(beforeFooter, /Kigali|Rwanda|Kicukiro/i);
+    assert.match(footer, /Kicukiro, Kigali, Rwanda/);
     assert.match(header, /class="brand-symbol"[^>]*><\/span><span class="wordmark">/);
   }
   const hero = pages.get('/').split('</section>')[0];
@@ -66,5 +70,5 @@ test('Header branding and contextual product and project journeys survive subdir
   assert.equal(pages.get('/custom-software/').match(/href="\/liocer.com\/contact\/\?interest=custom">Discuss a project/g).length, 2);
   assert.match(pages.get('/products/klex/'), /Design concept · In development/);
   const contact = pages.get('/contact/');
-  assert.ok(contact.indexOf('id="name"') < contact.indexOf('class="contact-location"'));
+  assert.ok(contact.indexOf('id="name"') < contact.indexOf('<aside>'));
 });

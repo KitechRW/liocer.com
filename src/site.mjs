@@ -23,7 +23,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     const original = fs.readFileSync(path.resolve('public/assets/icons', `${name}.svg`), 'utf8');
     return original.replace(/<svg[^>]*>/, `<svg class="icon ${extra}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">`);
   };
-  const logo = () => `<a class="brand" href="${url('/')}" aria-label="LIOCER home"><img class="nav-logo" src="${url('/assets/logo-white.png')}" width="630" height="208" alt=""></a>`;
+  const logo = () => `<a class="brand" href="${url('/')}" aria-label="LIOCER home"><img class="nav-logo" src="${url('/assets/logo-white.png')}" width="630" height="600" alt=""></a>`;
   const link = (text, route, style = 'primary') => `<a class="button button--${style}" href="${url(route)}">${text}</a>`;
   const art = (name, alt, { eager = false, cls = '' } = {}) => `<img class="artwork ${cls}" src="${url(`/assets/artworks/${name}.webp`)}" width="${name === 'saas' ? 1254 : 1672}" height="${name === 'saas' ? 1254 : 941}" alt="${escape(alt)}" ${eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async">`;
   const eyebrow = (text) => `<p class="eyebrow">${text}</p>`;

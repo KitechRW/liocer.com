@@ -451,7 +451,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   .site-header nav > a, .site-header nav .button--light { transition:none; }
   .site-header nav > a:not(.button):hover, .site-header nav .button--light:hover { transform:none; }
 }
-.site-header .nav-logo { width:clamp(36px,3.3vw,40px); }
+.site-header .nav-logo { width:clamp(48px,4.4vw,54px); }
 .footer-identity .nav-logo { width:clamp(82px,8vw,100px); }
 .header-inner { overflow:visible; }
 

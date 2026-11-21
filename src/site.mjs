@@ -72,10 +72,10 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     <section class="section home-who" id="who-we-are" aria-labelledby="who-title">
       <div class="container about-intro__grid">
         <div class="about-intro__copy">
-          ${eyebrow('A decade of client work')}
+          ${eyebrow('Where the idea began')}
           <h2 id="who-title">Built for challenges people share</h2>
           <p class="lead">Shared challenges deserve connected solutions.</p>
-          <p>We build and maintain software for the full workflow, with tailored projects for unique needs.</p>
+          <p>Before LIOCER, client website projects kept revealing the same pattern: different organizations, similar challenges, separate solutions. That led to a question: what if software could bring people together around a shared solution, connect the full workflow and grow more useful over time? That question guides the products we build and maintain today, alongside tailored projects for needs that are unique.</p>
           ${link('Our story', '/about/')}
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>

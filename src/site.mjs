@@ -66,7 +66,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
       <div class="container ribbon-hero__inner">
         <h1 id="hero-title">Intelligent systems<br><span>for everyday challenges.</span></h1>
         <p>Software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
-        <div class="button-row">${link('What we do', '/products/')}</div>
+        <div class="button-row">${link('Learn more', '/products/')}</div>
       </div>
     </section>
     <section class="section home-process"><div class="container"><h2>How we build.</h2>${process()}</div></section>

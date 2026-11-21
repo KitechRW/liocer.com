@@ -52,7 +52,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         <a href="${url('/contact/')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg>Get in Touch</a><a href="${url('/contact/?interest=partnership')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20m5-9a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-6h5m-2.5-2.5v5"/></svg>Partnerships</a>
         <a href="mailto:${escape(contactEmail)}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>${escape(contactEmail)}</a>
       </nav>
-      <div class="footer-location"><h2>Visit us</h2><address><svg class="footer-icon footer-icon--pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</address>
+      <div class="footer-location"><h2>Visit us</h2><address><svg class="footer-icon footer-icon--pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</span></address>
         <a class="footer-directions" href="https://maps.app.goo.gl/GwJLRn3LuifsWMHu8" target="_blank" rel="noopener noreferrer"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 20 4l-7 16-2-7-7-2Zm7 2 9-9"/></svg>Get directions <span aria-hidden="true">↗</span></a>
       </div>
     </div>

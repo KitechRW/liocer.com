@@ -74,8 +74,8 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         <div class="about-intro__copy">
           <h2 id="who-title">Software shaped around real work</h2>
           <p class="lead">Thoughtful engineering.<br>Practical outcomes.</p>
-          <p>We bring design, engineering and ongoing support together to create software that fits the people using it.</p>
-          <p>Our work spans tailored client solutions and products developed in-house, shaped by real business needs and everyday challenges.</p>
+          <p>A decade of building websites for clients one project at a time taught us to look beyond the individual project. Software can create more value when it brings people with shared needs together and supports their work end to end.</p>
+          <p>That insight guides us: we build and maintain solutions around common needs, while continuing to take on tailored projects when a challenge calls for a specific approach.</p>
           <a class="text-link" href="${url('/about/')}">Learn more about LIOCER</a>
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>

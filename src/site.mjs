@@ -61,12 +61,12 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
   const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="site-navigation" aria-label="Main navigation">${[['Home', '/'], ['Who we are', '/about/'], ['What we do', '/products/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
   const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Your goals, users and current ways of working.'], ['design', 'Design', 'A clear scope and a considered experience.'], ['build', 'Build', 'Manageable stages, with progress reviewed together.'], ['launch', 'Launch', 'A prepared environment and a confident start.'], ['support', 'Improve', 'Ongoing support and useful next steps.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;
   const home = `
-    <section class="ribbon-hero">
+    <section class="ribbon-hero" aria-labelledby="hero-title">
       <img class="ribbon-hero__art" src="${url('/assets/artworks/glass-ribbon.webp')}" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
       <div class="container ribbon-hero__inner">
-        <h1>Intelligent systems<br><span>for everyday challenges.</span></h1>
+        <h1 id="hero-title">Intelligent systems<br><span>for everyday challenges.</span></h1>
         <p>LIOCER is a software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
-        <div class="button-row">${link('Explore our products', '/products/')}</div>
+        <div class="button-row">${link('What we do', '/products/')}${link('Get in Touch', '/contact/', 'pearl')}</div>
       </div>
     </section>
     <section class="section home-process"><div class="container"><h2>How we build.</h2>${process()}</div></section>

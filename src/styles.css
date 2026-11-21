@@ -131,30 +131,6 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   backdrop-filter: var(--glass-blur);
 }
 .button--pearl:hover { background: #fff; }
-.ribbon-hero { position: relative; isolation: isolate; overflow: hidden; background: #edf0f5; }
-.ribbon-hero__art {
-  position: absolute;
-  inset: 0 0 0 auto;
-  z-index: -2;
-  width: 88%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 55% 55%;
-}
-.ribbon-hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(90deg, #edf0f5 4%, #edf0f5f5 25%, #edf0f5b5 40%, transparent 62%);
-}
-.ribbon-hero__inner {
-  padding-block: clamp(140px, 13vw, 205px) clamp(64px, 7vw, 120px);
-}
-.ribbon-hero .eyebrow, .showcase .eyebrow { text-transform: none; letter-spacing: .015em; font-size: .875rem; font-weight: 600; }
-.ribbon-hero h1 { color: var(--deep); font-size: clamp(3.8rem, 6.3vw, 6.7rem); line-height: .99; letter-spacing: -.065em; margin-bottom: .34em; }
-.ribbon-hero h1 span { color: #325b89; }
-.ribbon-hero__inner > p:not(.eyebrow) { color: #354b64; max-width: min(36vw, 28rem); font-size: clamp(1rem, 1.4vw, 1.19rem); line-height: 1.55; }
 .showcase {
   max-width: 1680px;
   margin-inline: auto;
@@ -224,14 +200,6 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   .site-header { top: max(8px, env(safe-area-inset-top)); }
   .site-header nav { gap: 10px; }
   body:not([data-page="/"]) main { padding-top: 70px; }
-  .ribbon-hero__inner { padding-top: 104px; padding-bottom: clamp(215px, 56vw, 320px); }
-  .ribbon-hero h1 { font-size: clamp(3.2rem, 11.6vw, 4.4rem); }
-  .ribbon-hero .eyebrow { margin-bottom: 18px; }
-  .ribbon-hero__inner > p:not(.eyebrow) { max-width: 31rem; }
-  .ribbon-hero__art { top: auto; width: 100%; height: 42%; object-position: 58% 74%; }
-  .ribbon-hero::before { background: linear-gradient(180deg, #edf0f5 48%, #edf0f5ed 58%, transparent 77%); }
-  .ribbon-hero .button-row { gap: 10px; margin-top: 20px; }
-  .ribbon-hero .button { padding-inline: 18px; min-height: 46px; }
   .showcase { grid-template-columns: 1fr; }
   .showcase-tile { border-radius: 22px; }
   .home-process { padding-top: 52px; }
@@ -273,10 +241,6 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   padding: 0 clamp(24px, 5.4vw, 84px);
   border-radius: 0;
 }
-.ribbon-hero__art { right: -7%; width: 82%; object-position: 50% 55%; }
-.ribbon-hero::before { background: linear-gradient(90deg, #edf0f5f5, #edf0f5c9); }
-.ribbon-hero h1 { font-size: clamp(3.25rem, 5.25vw, 5.25rem); max-width: 850px; }
-.ribbon-hero__inner > p:not(.eyebrow) { max-width: 31rem; }
 .about-intro__grid { grid-template-columns: 1fr 1.1fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
 .about-intro__copy { max-width: 580px; }
 .about-intro__art { overflow: hidden; border-radius: 28px; background: #e6edf6; }
@@ -295,10 +259,6 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-social .social-pending { color: #c3d2e3; }
 @media (max-width: 700px) {
   .header-inner { height: 64px; padding: 0 22px; }
-  .ribbon-hero__inner { padding-top: 72px; padding-bottom: 72px; position: relative; z-index: 1; }
-  .ribbon-hero__art { inset: 0; width: 100%; height: 100%; object-position: 65% center; opacity: .23; }
-  .ribbon-hero h1 { font-size: clamp(2rem, 8.7vw, 3.9rem); letter-spacing: -.055em; }
-  .ribbon-hero__inner > p:not(.eyebrow) { max-width: 31rem; }
   .about-intro__grid { grid-template-columns: 1fr; }
   .about-intro__art { min-height: 230px; position: relative; background-image: linear-gradient(90deg, #e6edf6e8, #e6edf633), url("../assets/artworks/about.webp"); background-size: cover; background-position: center; }
   .about-intro__art .artwork { display: none; }
@@ -459,6 +419,92 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-colophon .footer-social > a { width:38px; height:38px; justify-content:center; padding:8px; }
 .footer-colophon .footer-social > a span { display:none; }
 .footer-colophon .footer-social svg { width:18px; height:18px; }
+
+/* Pearl surfaces and a ribbon cropped into the edge frame the introduction. */
+.ribbon-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #edf0f5;
+}
+.ribbon-hero__art {
+  position: absolute;
+  inset: -3% -12% auto auto;
+  z-index: -2;
+  width: 85%;
+  max-width: none;
+  height: 106%;
+  object-fit: cover;
+  object-position: 55% center;
+  animation: hero-ribbon-drift 18s ease-in-out infinite alternate;
+}
+.ribbon-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #edf0f5 8%, #edf0f5fa 28%, #edf0f5e0 46%, #edf0f580 65%, transparent 85%);
+}
+.ribbon-hero__inner {
+  position: relative;
+  padding-block: clamp(100px, 9vw, 144px) clamp(92px, 8vw, 128px);
+}
+.ribbon-hero h1 {
+  max-width: 960px;
+  margin-bottom: 28px;
+  font-size: clamp(2.6rem, 4.65vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.09;
+  letter-spacing: -.055em;
+  color: var(--deep);
+}
+.ribbon-hero h1 span { color: #3d628a; }
+.ribbon-hero__inner > p {
+  max-width: 34rem;
+  margin-bottom: 0;
+  color: #3e526b;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.8;
+}
+.ribbon-hero .button-row { gap: 12px; margin-top: 32px; }
+.ribbon-hero .button { min-height: 52px; padding-inline: 27px; border-radius: 999px; }
+.ribbon-hero .button--pearl {
+  color: var(--navy);
+  background: #ffffff99;
+  border: 1px solid #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff, 0 4px 18px #092b5b09;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.ribbon-hero .button--pearl:hover { background: #ffffffeb; }
+.ribbon-hero h1, .ribbon-hero__inner > p, .ribbon-hero .button-row {
+  animation: hero-enter .75s ease-out both;
+}
+.ribbon-hero__inner > p { animation-delay: .08s; }
+.ribbon-hero .button-row { animation-delay: .16s; }
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-ribbon-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-8px, -6px, 0) scale(1.025); }
+}
+@media (max-width: 700px) {
+  .ribbon-hero__inner { padding-block: 64px 68px; }
+  .ribbon-hero h1 { font-size: clamp(1.6rem, 6.8vw, 3rem); line-height: 1.14; letter-spacing: -.045em; margin-bottom: 24px; }
+  .ribbon-hero__inner > p { max-width: 34rem; font-size: 1rem; line-height: 1.75; }
+  .ribbon-hero__art { inset: 0 -28% 0 auto; width: 130%; height: 100%; opacity: .25; object-position: 65% center; }
+  .ribbon-hero::before { background: linear-gradient(90deg, #edf0f5f5, #edf0f5ad); }
+  .ribbon-hero .button-row { margin-top: 28px; }
+  .ribbon-hero .button { min-height: 50px; padding-inline: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ribbon-hero__art, .ribbon-hero h1, .ribbon-hero__inner > p, .ribbon-hero .button-row { animation: none; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .ribbon-hero .button--pearl { background: #fff; border-color: #a1b3c9; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
 @media(max-width:440px) {
   .footer-colophon { flex-direction:row; align-items:center; justify-content:space-between; }
 }

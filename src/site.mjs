@@ -72,7 +72,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     <section class="section home-who" id="who-we-are" aria-labelledby="who-title">
       <div class="container about-intro__grid">
         <div class="about-intro__copy">
-          <h2 id="who-title">Who we are</h2>
+          <h2 id="who-title">Software shaped around real work</h2>
           <p class="lead">Thoughtful engineering.<br>Practical outcomes.</p>
           <p>We bring design, engineering and ongoing support together to create software that fits the people using it.</p>
           <p>Our work spans tailored client solutions and products developed in-house, shaped by real business needs and everyday challenges.</p>
@@ -83,7 +83,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     </section>
     <section class="section home-what" id="what-we-do" aria-labelledby="what-title">
       <div class="container">
-        <div class="section-heading"><h2 id="what-title">What we do</h2><p>We build software, connect systems and automate the work between them.</p></div>
+        <div class="section-heading"><h2 id="what-title">Better ways to get work done</h2><p>We build software, connect systems and automate the work between them.</p></div>
         <div class="home-capabilities">
           <article>${icon('build')}<h3>Tailored software</h3><p>Business applications, portals and internal tools designed around your users, processes and goals.</p></article>
           <article>${icon('integrations')}<h3>Intelligent automation</h3><p>Connected systems and automated workflows that reduce repeated data entry and manual follow-up.</p></article>
@@ -93,7 +93,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     </section>
     <section class="section home-process" id="how-we-work" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-heading"><h2 id="how-title">How we work</h2><p>We start by understanding the problem, build in manageable stages and keep improving through use and feedback.</p></div>
+        <div class="section-heading"><h2 id="how-title">A clear path from idea to impact</h2><p>We start by understanding the problem, build in manageable stages and keep improving through use and feedback.</p></div>
         ${process()}
       </div>
     </section>${closing()}`;

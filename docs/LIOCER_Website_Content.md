@@ -367,7 +367,7 @@ Secondary links: Privacy · Terms, linking to pages prepared for the actual site
 
 Location: Kigali, Rwanda
 
-Copyright: © 2026 LIOCER Ltd. All rights reserved.
+Copyright: © 2026 LIOCER All rights reserved.
 
 ## Visual and interaction direction
 

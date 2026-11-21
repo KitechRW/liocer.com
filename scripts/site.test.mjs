@@ -7,12 +7,12 @@ import { generatePages, routes } from '../src/site.mjs';
 for (const base of ['', '/liocer.com']) {
   test(`All pages and links resolve at ${base || 'the domain root'}`, () => {
     const pages = generatePages({ base, contactEmail: 'info@liocer.com' });
-    assert.equal(pages.size, 7);
+    assert.equal(pages.size, 5);
     for (const [route, html] of pages) {
       assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${route} must have one H1`);
       assert.match(html, /<html lang="en">/);
       assert.match(html, /name="robots" content="noindex,nofollow"/);
-      assert.doesNotMatch(html, /KORDIX|KORDIT|interest=kordix/);
+      assert.doesNotMatch(html, /KLEX|KORDIX|KORDIT|interest=kordix/);
       for (const [, attribute, raw] of html.matchAll(/\b(href|src)="([^"]+)"/g)) {
         const value = raw.replaceAll('&amp;', '&');
         if (/^(mailto:|https?:|#|data:)/.test(value)) continue;
@@ -41,12 +41,6 @@ test('Enquiries have an honest email handoff and correctly labelled fields', () 
     assert.match(html, new RegExp(`id="${id}"`));
   }
 });
-test('KLEX stays in development and company positioning stays broad', () => {
-  const pages = generatePages();
-  assert.match(pages.get('/products/klex/'), /In development/);
-  assert.match(pages.get('/about/'), /SaaS products and custom software/);
-  assert.doesNotMatch(pages.get('/products/klex/'), /Start free trial|Buy now/);
-});
 test('All self-hosted CSS assets exist', () => {
   const css = readFileSync('src/styles.css', 'utf8');
   for (const [, asset] of css.matchAll(/url\(['"]?\.\/([^)'";]+)['"]?\)/g)) {
@@ -63,12 +57,10 @@ test('Header branding and contextual product and project journeys survive subdir
     const [beforeFooter, footer] = html.split('<footer class="site-footer">');
     assert.doesNotMatch(beforeFooter, /Kigali|Rwanda|Kicukiro/i);
     assert.match(footer, /Kicukiro, Kigali, Rwanda/);
-    assert.match(header, /class="brand-symbol"[^>]*><\/span><span class="wordmark">/);
+    assert.ok(header.includes('/assets/logo-white.png'));
   }
   const hero = pages.get('/').split('</section>')[0];
-  assert.ok(hero.includes('href="/liocer.com/products/klex/">Explore KLEX'));
-  assert.equal(pages.get('/custom-software/').match(/href="\/liocer.com\/contact\/\?interest=custom">Discuss a project/g).length, 2);
-  assert.match(pages.get('/products/klex/'), /Design concept · In development/);
+  assert.ok(hero.includes('href="/liocer.com/products/">Explore our products'));
   const contact = pages.get('/contact/');
   assert.ok(contact.indexOf('id="name"') < contact.indexOf('<aside>'));
 });
@@ -87,7 +79,6 @@ test('Navigation, page labels, hero and social footer reflect the revised design
   assert.match(home, /href="https:\/\/www\.instagram\.com\/liocerhq\/"/);
   assert.match(home, /href="https:\/\/x\.com\/liocerhq"/);
   assert.match(home, /href="https:\/\/www\.linkedin\.com\/company\/liocer\/"/);
-  assert.match(home, /href="\/custom-software\/"[^>]*>Projects<\/a>/);
   assert.match(home, /assets\/artworks\/about\.webp/);
   assert.match(pages.get('/about/'), /assets\/artworks\/about\.webp/);
   assert.doesNotMatch(readFileSync('src/client.js', 'utf8'), /is-scrolled/);

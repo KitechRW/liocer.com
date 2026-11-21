@@ -6,7 +6,7 @@ const output = path.resolve(process.env.OUTPUT_DIR || 'dist');
 if (output === process.cwd() || !output.startsWith(`${process.cwd()}${path.sep}`)) throw new Error('Output must be a subdirectory of the checkout.');
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-await cp('public', output, { recursive: true });
+await cp('public', output, { recursive: true, filter: source => !source.endsWith('/klex.webp') });
 await cp('src/styles.css', path.join(output, 'styles.css'));
 await cp('src/client.js', path.join(output, 'client.js'));
 const preview = process.env.PREVIEW !== 'false';

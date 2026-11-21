@@ -25,8 +25,6 @@ if (interest && form) {
   const requested = new URLSearchParams(location.search).get('interest');
   if ([...interest.options].some(option => option.value === requested)) interest.value = requested;
   const headings = {
-    klex: 'Ask about KLEX',
-    custom: 'Discuss your software project',
     product: 'Ask about our SaaS products',
     partnership: 'Discuss a partnership'
   };

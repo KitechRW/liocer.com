@@ -65,7 +65,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
       <img class="ribbon-hero__art" src="${url('/assets/artworks/glass-ribbon.webp')}" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
       <div class="container ribbon-hero__inner">
         <h1 id="hero-title">Intelligent systems<br><span>for everyday challenges.</span></h1>
-        <p>LIOCER is a software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
+        <p>Software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
         <div class="button-row">${link('What we do', '/products/')}</div>
       </div>
     </section>

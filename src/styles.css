@@ -351,7 +351,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-links h2,.footer-location h2 { color:#fff; font:600 .8rem var(--body); letter-spacing:.12em; text-transform:uppercase; margin:5px 0 16px; }
 .footer-links a { min-height:40px; font-size:.9rem; color:#d7e3ef; }
 .footer-location address { color:#d7e3ef; font-size:.9rem; font-style:normal; line-height:1.8; margin-bottom:14px; }
-.footer-directions { display:inline-flex; align-items:center; gap:9px; color:#fff; min-height:40px; font-size:.9rem; font-weight:600; text-underline-offset:4px; }
+.footer-directions { display:inline-flex; align-items:center; gap:9px; color:#fff; min-height:40px; font-size:.9rem; font-weight:600; text-decoration:none; }
 .footer-colophon { align-items:center; }
 @media(max-width:760px) {
   .footer-main { grid-template-columns:1fr 1fr; gap:30px 24px; }

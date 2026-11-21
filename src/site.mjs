@@ -48,12 +48,12 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
       <nav class="footer-links" aria-label="Explore LIOCER"><h2>Explore</h2>
         <a href="${url('/')}">Home</a><a href="${url('/about/')}">About</a><a href="${url('/products/')}">Services</a>
       </nav>
-      <nav class="footer-links" aria-label="Connect with LIOCER"><h2>Connect</h2>
+      <nav class="footer-links" aria-label="Contact LIOCER"><h2>Contact</h2>
         <a href="${url('/contact/')}">Get in Touch</a><a href="${url('/contact/?interest=partnership')}">Partnerships</a>
         <a href="mailto:${escape(contactEmail)}">${escape(contactEmail)}</a>
       </nav>
       <div class="footer-location"><h2>Visit us</h2><address>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</address>
-        <a class="footer-directions" href="https://maps.app.goo.gl/YQQa3Ytn8PxEzxsJA" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+        <a class="footer-directions" href="https://maps.app.goo.gl/GwJLRn3LuifsWMHu8" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER Ltd.</span><span>Built with care in Kigali.</span></div>

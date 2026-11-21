@@ -57,7 +57,7 @@ test('Header branding and contextual product and project journeys survive subdir
     const [beforeFooter, footer] = html.split('<footer class="site-footer">');
     assert.doesNotMatch(beforeFooter, /Kigali|Rwanda|Kicukiro/i);
     assert.match(footer, /NZO’Z HOUSE.*KK 10 AVE, Zinia Road.*Kicukiro/);
-    assert.match(footer, /https:\/\/maps\.app\.goo\.gl\/YQQa3Ytn8PxEzxsJA/);
+    assert.match(footer, /https:\/\/maps\.app\.goo\.gl\/GwJLRn3LuifsWMHu8/);
     assert.ok(header.includes('/assets/logo-white.png'));
   }
   const hero = pages.get('/').split('</section>')[0];

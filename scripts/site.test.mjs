@@ -15,7 +15,7 @@ for (const base of ['', '/liocer.com']) {
       assert.doesNotMatch(html, /KLEX|KORDIX|KORDIT|interest=kordix/);
       for (const [, attribute, raw] of html.matchAll(/\b(href|src)="([^"]+)"/g)) {
         const value = raw.replaceAll('&amp;', '&');
-        if (/^(mailto:|https?:|#|data:)/.test(value)) continue;
+        if (/^(mailto:|tel:|https?:|#|data:)/.test(value)) continue;
         assert.ok(value.startsWith(`${base}/`), `${route}: ${attribute} ${value} must use the deployment base`);
         const clean = value.split(/[?#]/)[0].slice(base.length);
         if (clean.startsWith('/assets/')) {

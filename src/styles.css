@@ -477,6 +477,11 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   margin: 0;
   line-height: 1.8;
 }
+.home-what .home-capabilities article, .home-process .process-grid article { text-align: center; }
+.home-what .home-capabilities .icon, .home-process .process-grid .icon {
+  display: block;
+  margin-inline: auto;
+}
 @media (max-width: 700px) {
   .home-what .home-capabilities article { padding: 25px; }
   .home-what .home-capabilities .icon { margin-bottom: 20px; }

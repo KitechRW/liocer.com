@@ -645,10 +645,11 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   background: linear-gradient(135deg, #f8fafc 0%, #edf3f9 100%);
 }
 .home-who .about-intro__grid {
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-  gap: clamp(44px, 7vw, 104px);
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: clamp(42px, 6vw, 88px);
   align-items: center;
 }
+.home-who .about-intro__copy { grid-column: 2; grid-row: 1; }
 .home-who .about-intro__copy { max-width: 590px; }
 .home-who h2 {
   max-width: 12ch;
@@ -677,10 +678,14 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   line-height: 1.8;
 }
 .home-who .about-intro__art {
+  grid-column: 1;
+  grid-row: 1;
   position: relative;
   min-width: 0;
+  width: min(100%, 420px);
+  justify-self: start;
   overflow: hidden;
-  aspect-ratio: 1.08;
+  aspect-ratio: .95;
   border: 1px solid #ffffffd9;
   border-radius: 32px;
   background: radial-gradient(ellipse at 68% 35%, #fff 0%, #e2eaf4 62%, #d7e2ef 100%);
@@ -694,12 +699,29 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   mix-blend-mode: multiply;
 }
 @media (max-width: 800px) and (min-width: 701px) {
-  .home-who .about-intro__grid { gap: 36px; }
+  .home-who .about-intro__grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 30px; }
+  .home-who .about-intro__art { width: min(100%, 340px); }
   .home-who h2 { font-size: clamp(2.4rem, 5vw, 3.3rem); }
 }
 @media (max-width: 700px) {
   .home-who { background: #f3f6fa; }
+  .home-who .about-intro__grid { grid-template-columns: 1fr; }
   .home-who .about-intro__copy { max-width: 39rem; }
+  .home-who .about-intro__art {
+    grid-column: auto;
+    grid-row: auto;
+    width: auto;
+    aspect-ratio: auto;
+    position: absolute;
+    inset: 0 -20% 0 0;
+    z-index: -1;
+    justify-self: auto;
+    opacity: .13;
+    border: 0;
+    border-radius: 0;
+    background-position: 65% center;
+    box-shadow: none;
+  }
   .home-who h2 { max-width: 13ch; font-size: clamp(2.45rem, 9vw, 3.5rem); }
   .home-who .lead { max-width: 28ch; }
   .home-who .about-intro__copy > p:not(.lead) {

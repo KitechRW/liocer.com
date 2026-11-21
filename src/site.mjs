@@ -69,8 +69,34 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         <div class="button-row">${link('Learn more', '/products/')}</div>
       </div>
     </section>
-    <section class="section home-process"><div class="container"><h2>How we build.</h2>${process()}</div></section>
-    <section class="section about-intro"><div class="container about-intro__grid"><div class="about-intro__copy"><h2>From design to daily use.</h2><p class="lead">We design, build and support software for the teams who use it every day.</p><a class="text-link" href="${url('/about/')}">Meet LIOCER</a></div><div class="about-intro__art">${art('about', 'Sapphire, glass and pearl forms fitted into a continuous loop')}</div></div></section>${closing()}`;
+    <section class="section home-who" id="who-we-are" aria-labelledby="who-title">
+      <div class="container about-intro__grid">
+        <div class="about-intro__copy">
+          <h2 id="who-title">Who we are</h2>
+          <p class="lead">Thoughtful engineering.<br>Practical outcomes.</p>
+          <p>We bring design, engineering and ongoing support together to create software that fits the people using it.</p>
+          <p>Our work spans tailored client solutions and products developed in-house, shaped by real business needs and everyday challenges.</p>
+          <a class="text-link" href="${url('/about/')}">Learn more about LIOCER</a>
+        </div>
+        <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>
+      </div>
+    </section>
+    <section class="section home-what" id="what-we-do" aria-labelledby="what-title">
+      <div class="container">
+        <div class="section-heading"><h2 id="what-title">What we do</h2><p>We build software, connect systems and automate the work between them.</p></div>
+        <div class="home-capabilities">
+          <article>${icon('build')}<h3>Tailored software</h3><p>Business applications, portals and internal tools designed around your users, processes and goals.</p></article>
+          <article>${icon('integrations')}<h3>Intelligent automation</h3><p>Connected systems and automated workflows that reduce repeated data entry and manual follow-up.</p></article>
+          <article>${icon('products')}<h3>Product development</h3><p>Software products developed in-house, with focused design, continued improvement and support for daily use.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section home-process" id="how-we-work" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-heading"><h2 id="how-title">How we work</h2><p>We start by understanding the problem, build in manageable stages and keep improving through use and feedback.</p></div>
+        ${process()}
+      </div>
+    </section>${closing()}`;
 
   const products = `<section class="page-heading container about-heading"><div><h1>Products for<br>everyday work.</h1><p class="lead">We create software for the way organizations work, including our own products developed around everyday needs.</p>${link('Ask about product updates', '/contact/?interest=product')}</div><div class="page-heading__art">${art('saas', 'Layered pearl portals connected by a navy ribbon', { eager: true })}</div></section>`;
   const about = `<section class="page-heading container about-heading"><div><h1>Practical software.<br>Thoughtful engineering.</h1><p class="lead">We are a software engineering company developing practical software for businesses and organizations, including products of our own.</p></div><div class="page-heading__art">${art('about', 'Sapphire, glass and pearl forms fitted into a continuous loop', { eager: true })}</div></section><section class="section section--ice"><div class="container about-story"><h2>Technology should make<br>daily work easier to manage.</h2><div><p>Disconnected tools, repeated data entry and manual follow-up make everyday operations harder than they need to be.</p><p>We design and build software around real needs, then support it as it evolves. Some of that work becomes products of our own.</p></div></div><div class="container mission-grid"><article>${eyebrow('Our mission')}<h3>Help organizations<br>move forward.</h3><p>To design, build and support practical software that simplifies work and connects business processes.</p></article><article>${eyebrow('Our vision')}<h3>Useful technology.<br>Wider possibilities.</h3><p>To become a trusted software company creating accessible technology for businesses across Africa and beyond.</p></article></div></section><section class="section"><div class="container"><div class="section-heading"><h2>What guides<br>our work.</h2><p>Good engineering includes the way we collaborate, the decisions we make and the support that follows delivery.</p></div><div class="values-grid">${[

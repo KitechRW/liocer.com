@@ -232,6 +232,28 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   .button:hover { transform: none; }
 }
 
+/* Homepage story: who we are, what we do and how we work. */
+.home-who .about-intro__copy > p:not(.lead) { max-width: 36rem; line-height: 1.8; }
+.home-who .lead { color: #345777; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.45; letter-spacing: -.025em; }
+.home-what { background: linear-gradient(145deg, #f4f7fb, #eaf0f7); }
+.home-capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.home-capabilities article { padding: clamp(24px, 3vw, 38px); background: #ffffffb3; border: 1px solid #fff; border-radius: 24px; box-shadow: 0 8px 30px #092b5b05; }
+.home-capabilities .icon { width: 30px; height: 30px; margin-bottom: 30px; }
+.home-capabilities h3 { font-size: 1.3rem; line-height: 1.3; }
+.home-capabilities p { font-size: 1rem; line-height: 1.75; margin-bottom: 0; }
+.home-process .section-heading > p { max-width: 510px; line-height: 1.8; }
+@media (max-width: 800px) {
+  .home-capabilities { grid-template-columns: 1fr; gap: 16px; }
+  .home-capabilities article { padding: 28px; }
+  .home-capabilities .icon { margin-bottom: 20px; }
+}
+@media (max-width: 700px) {
+  .home-who { position: relative; isolation: isolate; overflow: hidden; background: #f8fafc; }
+  .home-who .about-intro__grid { position: static; }
+  .home-who .about-intro__art { position: absolute; inset: 0 -20% 0 0; z-index: -1; min-height: 0; border-radius: 0; opacity: .13; background-position: 65% center; }
+  .home-who .about-intro__copy { max-width: 36rem; }
+}
+
 /* The navigation spans the viewport and remains visible while scrolling. */
 .site-header { top: 0; }
 .header-inner {

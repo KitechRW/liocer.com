@@ -75,7 +75,6 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
           <h2 id="who-title">Built for challenges people share</h2>
           <p class="lead">Software should bring people and process together.</p>
           <p>What if it could support the work from end to end and improve over time? That question guides the products we build and maintain. We also take on custom software projects for clients.</p>
-          ${link('Our story', '/about/')}
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>
       </div>

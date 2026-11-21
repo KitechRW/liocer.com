@@ -638,3 +638,75 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 }
 .footer-colophon .footer-social > a { width:38px; height:38px; padding:8px; }
 .footer-colophon .footer-social svg { width:18px; height:18px; }
+
+/* A more deliberate editorial layout for the homepage story. */
+.home-who {
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf3f9 100%);
+}
+.home-who .about-intro__grid {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(44px, 7vw, 104px);
+  align-items: center;
+}
+.home-who .about-intro__copy { max-width: 590px; }
+.home-who h2 {
+  max-width: 12ch;
+  margin-bottom: 22px;
+  font-size: clamp(2.65rem, 4.5vw, 4.15rem);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+}
+.home-who .lead {
+  max-width: 27ch;
+  margin-bottom: 22px;
+  color: #345777;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.45;
+  letter-spacing: -.03em;
+}
+.home-who .about-intro__copy > p:not(.lead) {
+  max-width: 42ch;
+  margin: 0;
+  padding: 18px 22px;
+  border-left: 2px solid #8da9ca;
+  border-radius: 0 14px 14px 0;
+  background: #ffffffa6;
+  color: #52647a;
+  font-size: .96rem;
+  line-height: 1.8;
+}
+.home-who .about-intro__art {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 1.08;
+  border: 1px solid #ffffffd9;
+  border-radius: 32px;
+  background: radial-gradient(ellipse at 68% 35%, #fff 0%, #e2eaf4 62%, #d7e2ef 100%);
+  box-shadow: 0 28px 70px -44px #092b5b66, 0 1px 0 #fff inset;
+}
+.home-who .about-intro__art .artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% center;
+  mix-blend-mode: multiply;
+}
+@media (max-width: 800px) and (min-width: 701px) {
+  .home-who .about-intro__grid { gap: 36px; }
+  .home-who h2 { font-size: clamp(2.4rem, 5vw, 3.3rem); }
+}
+@media (max-width: 700px) {
+  .home-who { background: #f3f6fa; }
+  .home-who .about-intro__copy { max-width: 39rem; }
+  .home-who h2 { max-width: 13ch; font-size: clamp(2.45rem, 9vw, 3.5rem); }
+  .home-who .lead { max-width: 28ch; }
+  .home-who .about-intro__copy > p:not(.lead) {
+    max-width: 40ch;
+    padding: 15px 17px;
+    background: #ffffffbd;
+    font-size: .9rem;
+  }
+  .home-who .about-intro__art { border: 0; box-shadow: none; }
+}

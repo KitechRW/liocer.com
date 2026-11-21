@@ -64,8 +64,8 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     <section class="ribbon-hero">
       <img class="ribbon-hero__art" src="${url('/assets/artworks/glass-ribbon.webp')}" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
       <div class="container ribbon-hero__inner">
-        <h1>Software built for<br><span>the way you work.</span></h1>
-        <p>We are a software engineering company building practical software, including products of our own.</p>
+        <h1>Intelligent systems<br><span>for everyday challenges.</span></h1>
+        <p>LIOCER is a software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
         <div class="button-row">${link('Explore our products', '/products/')}</div>
       </div>
     </section>
@@ -98,7 +98,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     </div></section>`;
 
   const metadata = [
-    ['/', 'LIOCER — Software Engineering', 'Software engineering for businesses and organizations. software built around real business needs.', home],
+    ['/', 'LIOCER — Software Engineering', 'Intelligent software and automation to simplify complex work through tailored client solutions and products developed in-house.', home],
     ['/products/', 'Software Engineering — LIOCER', 'Explore software built by LIOCER, including products of our own.', products],
     ['/about/', 'About LIOCER — Software Engineering', 'Practical software, thoughtful engineering and continued support. Get to know LIOCER.', about],
     ['/contact/', 'Contact LIOCER', 'Talk to LIOCER about software development and partnerships.', contact],

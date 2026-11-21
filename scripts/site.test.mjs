@@ -69,7 +69,7 @@ test('Header branding and contextual product and project journeys survive subdir
 test('Navigation, page labels, hero and social footer reflect the revised design', () => {
   const pages = generatePages();
   const home = pages.get('/');
-  assert.match(home, /Software built for<br><span>the way you work\.<\/span>/);
+  assert.match(home, /Intelligent systems<br><span>for everyday challenges\.<\/span>/);
   assert.doesNotMatch(home, /<p class="eyebrow">Software engineering<\/p>/);
   for (const html of pages.values()) {
     assert.doesNotMatch(html, /LIOCER \/ (?:Contact|Products|About|Custom Software)/);

@@ -454,3 +454,11 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .site-header .nav-logo { width:clamp(29px,2.65vw,32px); }
 .footer-identity .nav-logo { width:clamp(82px,8vw,100px); }
 .header-inner { overflow:visible; }
+
+.footer-colophon .footer-social { margin:0; gap:8px; }
+.footer-colophon .footer-social > a { width:38px; height:38px; justify-content:center; padding:8px; }
+.footer-colophon .footer-social > a span { display:none; }
+.footer-colophon .footer-social svg { width:18px; height:18px; }
+@media(max-width:440px) {
+  .footer-colophon { flex-direction:row; align-items:center; justify-content:space-between; }
+}

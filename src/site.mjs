@@ -44,7 +44,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
   }).join('')}</div>`;
   const footer = `<footer class="site-footer"><div class="container">
     <div class="footer-main">
-      <div class="footer-identity">${logo(true)}<p>Digital solutions that move business forward.</p>${socials}</div>
+      <div class="footer-identity">${logo(true)}<p>Digital solutions that move business forward.</p></div>
       <nav class="footer-links" aria-label="Explore LIOCER"><h2>Explore</h2>
         <a href="${url('/')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>Home</a><a href="${url('/about/')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5a6.5 6.5 0 0 1 13 0V20M16 5.5a3.5 3.5 0 0 1 0 6.8M19 15a5 5 0 0 1 2.5 4.3V20"/></svg>Who we are</a><a href="${url('/products/')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5m8-5v5M7 14h3m4 0h3M7 17h2"/></svg>What we do</a>
       </nav>
@@ -56,7 +56,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         <a class="footer-directions" href="https://maps.app.goo.gl/GwJLRn3LuifsWMHu8" target="_blank" rel="noopener noreferrer"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 20 4l-7 16-2-7-7-2Zm7 2 9-9"/></svg>Get directions</a>
       </div>
     </div>
-    <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER</span><span>Built with care in Kigali.</span></div>
+    <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER</span>${socials}</div>
   </div></footer>`;
   const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="site-navigation" aria-label="Main navigation">${[['Home', '/'], ['Who we are', '/about/'], ['What we do', '/products/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
   const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Your goals, users and current ways of working.'], ['design', 'Design', 'A clear scope and a considered experience.'], ['build', 'Build', 'Manageable stages, with progress reviewed together.'], ['launch', 'Launch', 'A prepared environment and a confident start.'], ['support', 'Improve', 'Ongoing support and useful next steps.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;

@@ -465,9 +465,29 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   font-size: .9rem;
 }
 .home-who .button:hover, .closing .button:hover, .ribbon-hero .button:hover { transform: translateY(-2px); }
+.home-what .section-heading, .home-process .section-heading {
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 104px);
+}
+.home-what .section-heading h2, .home-process .section-heading h2 { max-width: 16ch; }
+.home-what .section-heading > p, .home-process .section-heading > p {
+  max-width: 35ch;
+  justify-self: start;
+  margin: 0;
+  line-height: 1.8;
+}
 @media (max-width: 700px) {
   .home-what .home-capabilities article { padding: 25px; }
   .home-what .home-capabilities .icon { margin-bottom: 20px; }
+}
+@media (max-width: 800px) {
+  .home-what .section-heading, .home-process .section-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 18px;
+  }
+  .home-what .section-heading > p, .home-process .section-heading > p { max-width: 38ch; }
 }
 
 /* Pearl surfaces and a ribbon cropped into the edge frame the introduction. */

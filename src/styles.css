@@ -185,7 +185,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .matter-panel, .enquiry-panel { border: 1px solid #d4dfea; border-radius: 26px; box-shadow: 0 16px 45px -36px #193d6b79; }
 .enquiry-panel { background: linear-gradient(145deg, #f9fafc, #edf2f8); }
 .field input, .field select, .field textarea { border-radius: 12px; }
-.nav-logo { display: block; width: clamp(128px, 14vw, 160px); height: auto; }
+.nav-logo { display: block; width: clamp(86px, 9vw, 108px); height: auto; }
 .site-header nav > a:not(.button)::after { background: currentColor; }
 .site-header .menu-toggle { color: white; }
 .site-header .menu-lines, .site-header .menu-lines::after { border-color: currentColor; }
@@ -274,7 +274,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   border-radius: 0;
 }
 .ribbon-hero__art { right: -7%; width: 82%; object-position: 50% 55%; }
-.ribbon-hero::before { background: linear-gradient(90deg, #edf0f5 5%, #edf0f5f7 27%, #edf0f5d6 42%, transparent 67%); }
+.ribbon-hero::before { background: linear-gradient(90deg, #edf0f5f5, #edf0f5c9); }
 .ribbon-hero h1 { font-size: clamp(3.25rem, 5.25vw, 5.25rem); max-width: 850px; }
 .ribbon-hero__inner > p:not(.eyebrow) { max-width: 31rem; }
 .about-intro__grid { grid-template-columns: 1fr 1.1fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
@@ -295,14 +295,16 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-social .social-pending { color: #c3d2e3; }
 @media (max-width: 700px) {
   .header-inner { height: 64px; padding: 0 22px; }
-  .ribbon-hero__inner { padding-top: 128px; }
-  .ribbon-hero__art { right: -20%; width: 120%; height: 42%; object-position: 58% 74%; }
+  .ribbon-hero__inner { padding-top: 72px; padding-bottom: 72px; position: relative; z-index: 1; }
+  .ribbon-hero__art { inset: 0; width: 100%; height: 100%; object-position: 65% center; opacity: .23; }
   .ribbon-hero h1 { font-size: clamp(2rem, 8.7vw, 3.9rem); letter-spacing: -.055em; }
   .ribbon-hero__inner > p:not(.eyebrow) { max-width: 31rem; }
   .about-intro__grid { grid-template-columns: 1fr; }
-  .about-intro__art .artwork { height: 280px; }
+  .about-intro__art { min-height: 230px; position: relative; background-image: linear-gradient(90deg, #e6edf6e8, #e6edf633), url("../assets/artworks/about.webp"); background-size: cover; background-position: center; }
+  .about-intro__art .artwork { display: none; }
   .about-heading .page-heading__art { display: block; }
-  .about-heading .page-heading__art .artwork { height: 270px; }
+  .about-heading .page-heading__art { min-height: 180px; background: url("../assets/artworks/about.webp") center / cover; border-radius: 22px; }
+  .about-heading .page-heading__art .artwork { display: none; }
 }
 
 .footer-social a[aria-label="LIOCER on X"] span { display:none; }

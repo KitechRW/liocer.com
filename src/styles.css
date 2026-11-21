@@ -462,3 +462,5 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 @media(max-width:440px) {
   .footer-colophon { flex-direction:row; align-items:center; justify-content:space-between; }
 }
+.footer-colophon .footer-social > a { width:52px; height:52px; padding:9px; }
+.footer-colophon .footer-social svg { width:31px; height:31px; }

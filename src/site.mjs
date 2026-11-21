@@ -48,7 +48,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         ${socials}
       </div>
       <nav class="footer-links" aria-label="Products and services"><h2>What we build</h2>
-        <a href="${url('/products/')}">Our products</a>
+        <a href="${url('/products/')}">Services</a>
       </nav>
       <nav class="footer-links" aria-label="Company"><h2>Company</h2>
         <a href="${url('/about/')}">About LIOCER</a>
@@ -58,7 +58,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     </div>
     <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER Ltd.</span><address>Kicukiro, Kigali, Rwanda</address></div>
   </div></footer>`;
-  const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button><nav id="site-navigation" aria-label="Main navigation">${[['Products', '/products/'], ['About', '/about/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
+  const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="site-navigation" aria-label="Main navigation">${[['Home', '/'], ['About', '/about/'], ['Services', '/products/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
   const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Your goals, users and current ways of working.'], ['design', 'Design', 'A clear scope and a considered experience.'], ['build', 'Build', 'Manageable stages, with progress reviewed together.'], ['launch', 'Launch', 'A prepared environment and a confident start.'], ['support', 'Improve', 'Ongoing support and useful next steps.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;
   const home = `
     <section class="ribbon-hero">

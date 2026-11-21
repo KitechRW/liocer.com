@@ -188,7 +188,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .nav-logo { display: block; width: clamp(86px, 9vw, 108px); height: auto; }
 .site-header nav > a:not(.button)::after { background: currentColor; }
 .site-header .menu-toggle { color: white; }
-.site-header .menu-lines, .site-header .menu-lines::after { border-color: currentColor; }
+.site-header .menu-icon { stroke: currentColor; }
 .site-header .button--light { background: #fff; color: var(--navy); }
 .site-header .button--light:hover { background: #e6edf6; }
 .header-inner :focus-visible, .site-footer :focus-visible { outline: 3px solid #b9dbff; outline-offset: 3px; }
@@ -308,3 +308,34 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 }
 
 .footer-social a[aria-label="LIOCER on X"] span { display:none; }
+
+/* Keep the emblem and wordmark optically balanced in the header. */
+.site-header .nav-logo { width: clamp(104px, 10vw, 124px); height: auto; }
+.menu-toggle { display: none; }
+.menu-icon { display:block; width:25px; height:25px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; }
+@media (max-width:700px) {
+  .header-inner { position:relative; }
+  .menu-toggle { display:grid; place-items:center; width:46px; height:46px; padding:0; border:0; border-radius:50%; background:transparent; color:white; }
+  .menu-toggle:hover, .menu-toggle[aria-expanded="true"] { background:#ffffff20; }
+  .site-header nav, .site-header nav.is-open {
+    position:absolute; top:100%; left:0; right:0; width:100%; max-height:calc(100dvh - 80px);
+    overflow-y:auto; display:none; flex-direction:column; align-items:stretch; gap:0;
+    padding:12px clamp(22px,5vw,48px) 22px; border:0; border-radius:0 0 20px 20px;
+    background:#092b5b; box-shadow:0 18px 32px #061c3b30;
+  }
+  .site-header nav.is-open { display:flex; }
+  .site-header nav>a:not(.button) { padding:15px 4px; border-bottom:1px solid #ffffff27; color:#fff; font-size:1rem; }
+  .site-header nav .button { margin-top:14px; }
+}
+
+@media (max-width:700px) {
+  .site-header nav, .site-header nav.is-open {
+    position:absolute; inset:100% 0 auto; width:100%; max-height:calc(100dvh - 80px);
+    overflow-y:auto; display:none; flex-direction:column; align-items:stretch; gap:2px;
+    padding:14px 24px 24px; border:0; border-radius:0 0 18px 18px;
+    background:#092b5b; box-shadow:0 18px 32px #061c3b30;
+  }
+  .site-header nav.is-open { display:flex; }
+  .site-header nav>a:not(.button) { color:#fff; padding:14px 4px; border-bottom:1px solid #ffffff25; }
+  .site-header nav .button { margin-top:12px; }
+}

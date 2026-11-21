@@ -61,7 +61,7 @@ test('Header branding and contextual product and project journeys survive subdir
     assert.ok(header.includes('/assets/logo-white.png'));
   }
   const hero = pages.get('/').split('</section>')[0];
-  assert.ok(hero.includes('href="/liocer.com/products/">Learn more'));
+  assert.ok(hero.includes('href="/liocer.com/products/">See what we build'));
   const contact = pages.get('/contact/');
   assert.ok(contact.indexOf('id="name"') < contact.indexOf('<aside>'));
 });

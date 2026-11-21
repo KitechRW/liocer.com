@@ -56,7 +56,8 @@ test('Header branding and contextual product and project journeys survive subdir
     assert.match(header, /href="\/liocer.com\/contact\/">Get in Touch</);
     const [beforeFooter, footer] = html.split('<footer class="site-footer">');
     assert.doesNotMatch(beforeFooter, /Kigali|Rwanda|Kicukiro/i);
-    assert.match(footer, /Kicukiro, Kigali, Rwanda/);
+    assert.match(footer, /NZO’Z HOUSE.*KK 10 AVE, Zinia Road.*Kicukiro/);
+    assert.match(footer, /https:\/\/maps\.app\.goo\.gl\/YQQa3Ytn8PxEzxsJA/);
     assert.ok(header.includes('/assets/logo-white.png'));
   }
   const hero = pages.get('/').split('</section>')[0];
@@ -73,7 +74,9 @@ test('Navigation, page labels, hero and social footer reflect the revised design
   for (const html of pages.values()) {
     assert.doesNotMatch(html, /LIOCER \/ (?:Contact|Products|About|Custom Software)/);
     const footer = html.split('<footer class="site-footer">')[1];
-    assert.doesNotMatch(footer, /footer-email|mailto:info@liocer.com/);
+    assert.match(footer, /mailto:info@liocer.com/);
+    assert.match(footer, /NZO’Z HOUSE/);
+    assert.match(footer, /Get directions/);
     for (const name of ['Instagram', 'X', 'LinkedIn']) assert.match(footer, new RegExp(`aria-label="LIOCER on ${name}"`));
   }
   assert.match(home, /href="https:\/\/www\.instagram\.com\/liocerhq\/"/);

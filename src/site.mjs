@@ -44,19 +44,19 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
   }).join('')}</div>`;
   const footer = `<footer class="site-footer"><div class="container">
     <div class="footer-main">
-      <div class="footer-identity">${logo(true)}<p>Digital solutions that move business forward.</p>
-        ${socials}
+      <div class="footer-identity">${logo(true)}<p>Digital solutions that move business forward.</p>${socials}</div>
+      <nav class="footer-links" aria-label="Explore LIOCER"><h2>Explore</h2>
+        <a href="${url('/')}">Home</a><a href="${url('/about/')}">About</a><a href="${url('/products/')}">Services</a>
+      </nav>
+      <nav class="footer-links" aria-label="Connect with LIOCER"><h2>Connect</h2>
+        <a href="${url('/contact/')}">Get in Touch</a><a href="${url('/contact/?interest=partnership')}">Partnerships</a>
+        <a href="mailto:${escape(contactEmail)}">${escape(contactEmail)}</a>
+      </nav>
+      <div class="footer-location"><h2>Visit us</h2><address>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</address>
+        <a class="footer-directions" href="https://maps.app.goo.gl/YQQa3Ytn8PxEzxsJA" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
       </div>
-      <nav class="footer-links" aria-label="Products and services"><h2>What we build</h2>
-        <a href="${url('/products/')}">Services</a>
-      </nav>
-      <nav class="footer-links" aria-label="Company"><h2>Company</h2>
-        <a href="${url('/about/')}">About LIOCER</a>
-        <a href="${url('/contact/?interest=partnership')}">Partnerships</a>
-        <a href="${url('/contact/')}">Get in Touch</a>
-      </nav>
     </div>
-    <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER Ltd.</span><address>Kicukiro, Kigali, Rwanda</address></div>
+    <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER Ltd.</span><span>Built with care in Kigali.</span></div>
   </div></footer>`;
   const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="site-navigation" aria-label="Main navigation">${[['Home', '/'], ['About', '/about/'], ['Services', '/products/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
   const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Your goals, users and current ways of working.'], ['design', 'Design', 'A clear scope and a considered experience.'], ['build', 'Build', 'Manageable stages, with progress reviewed together.'], ['launch', 'Launch', 'A prepared environment and a confident start.'], ['support', 'Improve', 'Ongoing support and useful next steps.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;

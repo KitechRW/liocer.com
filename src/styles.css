@@ -370,3 +370,35 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-location address .footer-icon--pin { margin-top:3px; }
 .footer-directions { gap:9px; }
 .footer-social a[aria-label="LIOCER on LinkedIn"] svg { fill:currentColor; stroke:none; }
+
+/* Clear, balanced full-width navigation across viewports. */
+.site-header {
+  height: 76px;
+  position: sticky;
+  top: 0;
+  background: #092b5b;
+  box-shadow: 0 8px 24px #061c3b18;
+}
+.header-inner {
+  height: 76px;
+  padding-inline: clamp(22px, 5vw, 80px);
+  background: #092b5b;
+  box-shadow: none;
+}
+.site-header .nav-logo { width: clamp(100px, 9vw, 116px); }
+.site-header nav { gap: clamp(22px, 3vw, 42px); }
+.site-header nav > a:not(.button) {
+  color: #f5f8fc;
+  font-size: .9rem;
+  font-weight: 500;
+}
+.site-header nav > a:not(.button)::after { background: #d9e8fb; }
+.site-header nav .button--light { padding-inline: 22px; border-radius: 999px; }
+@media(max-width:700px) {
+  .site-header { height:64px; }
+  .header-inner { height:64px; padding-inline:20px; }
+  .site-header nav, .site-header nav.is-open {
+    top:100%; border-radius:0 0 18px 18px;
+    background:#092b5b; box-shadow:0 18px 30px #061c3b30;
+  }
+}

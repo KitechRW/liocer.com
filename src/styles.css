@@ -451,7 +451,7 @@ body:not([data-page="/"]) main { padding-top: 88px; }
   .site-header nav > a, .site-header nav .button--light { transition:none; }
   .site-header nav > a:not(.button):hover, .site-header nav .button--light:hover { transform:none; }
 }
-.site-header .nav-logo { width:clamp(29px,2.65vw,32px); }
+.site-header .nav-logo { width:clamp(36px,3.3vw,40px); }
 .footer-identity .nav-logo { width:clamp(82px,8vw,100px); }
 .header-inner { overflow:visible; }
 
@@ -462,5 +462,5 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 @media(max-width:440px) {
   .footer-colophon { flex-direction:row; align-items:center; justify-content:space-between; }
 }
-.footer-colophon .footer-social > a { width:52px; height:52px; padding:9px; }
-.footer-colophon .footer-social svg { width:31px; height:31px; }
+.footer-colophon .footer-social > a { width:38px; height:38px; padding:8px; }
+.footer-colophon .footer-social svg { width:18px; height:18px; }

@@ -466,14 +466,14 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 }
 .home-who .button:hover, .closing .button:hover, .ribbon-hero .button:hover { transform: translateY(-2px); }
 .home-what .section-heading, .home-process .section-heading {
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
-  align-items: center;
-  gap: clamp(36px, 7vw, 104px);
+  grid-template-columns: minmax(0, 760px);
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 40px;
 }
-.home-what .section-heading h2, .home-process .section-heading h2 { max-width: 16ch; }
+.home-what .section-heading h2, .home-process .section-heading h2 { max-width: 18ch; }
 .home-what .section-heading > p, .home-process .section-heading > p {
-  max-width: 35ch;
-  justify-self: start;
+  max-width: 58ch;
   margin: 0;
   line-height: 1.8;
 }

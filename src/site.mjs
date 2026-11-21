@@ -72,10 +72,10 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     <section class="section home-who" id="who-we-are" aria-labelledby="who-title">
       <div class="container about-intro__grid">
         <div class="about-intro__copy">
+          ${eyebrow('A decade of client work')}
           <h2 id="who-title">Built for challenges people share</h2>
-          <p class="lead">Thoughtful engineering.<br>Practical outcomes.</p>
-          <p>More than a decade of building websites for clients one project at a time showed us how often the same challenges appear across different organizations.</p>
-          <p>Software can create greater value when people who share those challenges can use one well-maintained solution across the full workflow. That’s why we build products around common needs and deliver tailored projects where the work calls for a specific approach.</p>
+          <p class="lead">Shared challenges deserve connected solutions.</p>
+          <p>We build and maintain software for the full workflow, with tailored projects for unique needs.</p>
           ${link('Our story', '/about/')}
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>

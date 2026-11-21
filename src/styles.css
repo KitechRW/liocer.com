@@ -444,7 +444,12 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 
 /* Homepage visual rhythm, shared-solution story and matching calls to action. */
 .home-who { background: #fff; }
-.home-who .about-intro__copy > p:not(.lead) { max-width: 41rem; line-height: 1.8; }
+.home-who .about-intro__copy { max-width: 33rem; }
+.home-who .about-intro__copy .eyebrow { margin-bottom: 16px; color: #55708f; }
+.home-who h2 { max-width: 14ch; margin-bottom: 18px; }
+.home-who .about-intro__copy > p:not(.lead) { max-width: 32rem; line-height: 1.75; }
+.home-who .lead { max-width: 30ch; margin-bottom: 14px; }
+.home-who .about-intro__copy > .button { margin-top: 4px; }
 .home-what { background: linear-gradient(145deg, #0d376c, #092b5b 68%); color: #fff; }
 .home-what .section-heading h2 { color: #fff; }
 .home-what .section-heading > p { color: #d6e1ef; }

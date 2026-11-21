@@ -35,7 +35,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
   const socialIcon = (name) => ({
     Instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>',
     X: '<path d="M4 3h3.7L20 21h-3.7L4 3Z"/><path d="M20 3 4 21"/>',
-    LinkedIn: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10v7m0-10v.1M11 17v-7h3v1c.5-.8 1.3-1.3 2.5-1.3 2 0 2.5 1.4 2.5 3V17"/>'
+    LinkedIn: '<path fill="currentColor" stroke="none" d="M20.45 3H3.55C3.25 3 3 3.24 3 3.54v16.92c0 .3.25.54.55.54h16.9c.3 0 .55-.24.55-.54V3.54c0-.3-.25-.54-.55-.54ZM8.04 18.4H5.1V9.47h2.94v8.92ZM6.57 8.25a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Zm11.84 10.15h-2.94v-4.34c0-1.03-.02-2.36-1.44-2.36-1.45 0-1.67 1.13-1.67 2.29v4.41H9.42V9.47h2.82v1.22h.04c.39-.7 1.35-1.44 2.78-1.44 2.98 0 3.53 1.96 3.53 4.5v4.65Z"/>'
   })[name];
   const socials = `<div class="footer-social" aria-label="LIOCER social media">${['Instagram', 'X', 'LinkedIn'].map(name => {
     const glyph = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${socialIcon(name)}</svg>`;
@@ -49,11 +49,11 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
         <a href="${url('/')}">Home</a><a href="${url('/about/')}">About</a><a href="${url('/products/')}">Services</a>
       </nav>
       <nav class="footer-links" aria-label="Contact LIOCER"><h2>Contact</h2>
-        <a href="${url('/contact/')}">Get in Touch</a><a href="${url('/contact/?interest=partnership')}">Partnerships</a>
-        <a href="mailto:${escape(contactEmail)}">${escape(contactEmail)}</a>
+        <a href="${url('/contact/')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg>Get in Touch</a><a href="${url('/contact/?interest=partnership')}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20m5-9a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-6h5m-2.5-2.5v5"/></svg>Partnerships</a>
+        <a href="mailto:${escape(contactEmail)}"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>${escape(contactEmail)}</a>
       </nav>
-      <div class="footer-location"><h2>Visit us</h2><address>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</address>
-        <a class="footer-directions" href="https://maps.app.goo.gl/GwJLRn3LuifsWMHu8" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+      <div class="footer-location"><h2>Visit us</h2><address><svg class="footer-icon footer-icon--pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>NZO’Z HOUSE<br>KK 10 AVE, Zinia Road<br>Kicukiro, Kigali, Rwanda</address>
+        <a class="footer-directions" href="https://maps.app.goo.gl/GwJLRn3LuifsWMHu8" target="_blank" rel="noopener noreferrer"><svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 20 4l-7 16-2-7-7-2Zm7 2 9-9"/></svg>Get directions <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER Ltd.</span><span>Built with care in Kigali.</span></div>

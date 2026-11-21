@@ -75,7 +75,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
           ${eyebrow('Where the idea began')}
           <h2 id="who-title">Built for challenges people share</h2>
           <p class="lead">Shared challenges deserve connected solutions.</p>
-          <p>What if software could bring people together around a shared solution, connect the full workflow and grow more useful over time? That question guides the products we build and maintain today, alongside tailored projects for needs that are unique.</p>
+          <p>What if software could bring people together around a shared solution, connect the full workflow and grow more useful over time? That question guides the products we build and maintain. We also take on custom software projects for clients.</p>
           ${link('Our story', '/about/')}
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>

@@ -442,6 +442,29 @@ body:not([data-page="/"]) main { padding-top: 88px; }
 .footer-colophon .footer-social > a span { display:none; }
 .footer-colophon .footer-social svg { width:18px; height:18px; }
 
+/* Homepage visual rhythm, shared-solution story and matching calls to action. */
+.home-who { background: #fff; }
+.home-who .about-intro__copy > p:not(.lead) { max-width: 41rem; line-height: 1.8; }
+.home-what { background: linear-gradient(145deg, #0d376c, #092b5b 68%); color: #fff; }
+.home-what .section-heading h2 { color: #fff; }
+.home-what .section-heading > p { color: #d6e1ef; }
+.home-what .home-capabilities article { background: #fff; border-color: #ffffffb8; box-shadow: 0 14px 36px #061c3b24; }
+.home-what .home-capabilities .icon { color: var(--navy); }
+.home-what .home-capabilities h3 { color: var(--navy); }
+.home-what .home-capabilities p { color: var(--slate); }
+.home-process { background: #f3f6fa; }
+.ribbon-hero .button, .home-who .button, .closing .button {
+  min-height: 52px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: .9rem;
+}
+.home-who .button:hover, .closing .button:hover, .ribbon-hero .button:hover { transform: translateY(-2px); }
+@media (max-width: 700px) {
+  .home-what .home-capabilities article { padding: 25px; }
+  .home-what .home-capabilities .icon { margin-bottom: 20px; }
+}
+
 /* Pearl surfaces and a ribbon cropped into the edge frame the introduction. */
 .ribbon-hero {
   position: relative;

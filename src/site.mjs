@@ -27,7 +27,7 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
   const link = (text, route, style = 'primary') => `<a class="button button--${style}" href="${url(route)}">${text}</a>`;
   const art = (name, alt, { eager = false, cls = '' } = {}) => `<img class="artwork ${cls}" src="${url(`/assets/artworks/${name}.webp`)}" width="${name === 'saas' ? 1254 : 1672}" height="${name === 'saas' ? 1254 : 941}" alt="${escape(alt)}" ${eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async">`;
   const eyebrow = (text) => `<p class="eyebrow">${text}</p>`;
-  const closing = (heading = 'What could better software make possible?', copy = 'Tell us what you are building, what is slowing your team down or what you want to improve.', action = 'Start a conversation', route = '/contact/') => `<section class="closing"><div class="container closing__inner"><div><h2>${heading}</h2><p>${copy}</p>${link(action, route, 'light')}</div><div class="closing__art" aria-hidden="true">${art('integrations', '')}</div></div></section>`;
+  const closing = (heading = 'Have a challenge worth solving together?', copy = 'Tell us where work gets stuck, who it affects and what a better workflow could look like. We’ll explore a shared solution or a tailored project with you.', action = 'Talk through a challenge', route = '/contact/') => `<section class="closing"><div class="container closing__inner"><div><h2>${heading}</h2><p>${copy}</p>${link(action, route, 'light')}</div><div class="closing__art" aria-hidden="true">${art('integrations', '')}</div></div></section>`;
   const head = (title, description, route) => {
     const canonical = siteUrl ? `${siteUrl.replace(/\/$/, '')}${url(route)}` : '';
     return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="theme-color" content="#092B5B">${preview ? '<meta name="robots" content="noindex,nofollow">' : ''}${canonical ? `<link rel="canonical" href="${escape(canonical)}"><meta property="og:url" content="${escape(canonical)}">` : ''}<meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:type" content="website"><link rel="icon" href="${url('/assets/symbol-master.png')}" type="image/png"><link rel="preload" href="${url('/assets/fonts/manrope.woff')}" as="font" type="font/woff" crossorigin><link rel="stylesheet" href="${stylesheet}"><script src="${clientScript}" defer></script></head>`;
@@ -59,41 +59,41 @@ export function generatePages({ base = '', contactEmail = 'info@liocer.com', sit
     <div class="footer-colophon"><span>© ${new Date().getUTCFullYear()} LIOCER</span>${socials}</div>
   </div></footer>`;
   const shell = (route, title, description, content) => `${head(title, description, route)}<body data-page="${route}" data-contact-email="${escape(contactEmail)}"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner">${logo(true)}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-navigation" aria-expanded="false"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="site-navigation" aria-label="Main navigation">${[['Home', '/'], ['Who we are', '/about/'], ['What we do', '/products/']].map(([label, href]) => `<a href="${url(href)}" ${route === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}${link('Get in Touch', '/contact/', 'light')}</nav></div></header><main id="main">${content}</main>${footer}</body></html>`;
-  const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Your goals, users and current ways of working.'], ['design', 'Design', 'A clear scope and a considered experience.'], ['build', 'Build', 'Manageable stages, with progress reviewed together.'], ['launch', 'Launch', 'A prepared environment and a confident start.'], ['support', 'Improve', 'Ongoing support and useful next steps.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;
+  const process = () => `<div class="process-grid">${[['discovery', 'Understand', 'Talk with the people doing the work. Find the friction and shared need.'], ['design', 'Map the workflow', 'Follow each step, handoff and system from beginning to end.'], ['build', 'Build together', 'Shape and develop a practical solution in clear, reviewable stages.'], ['launch', 'Put it to work', 'Support teams as they bring the solution into their daily workflow.'], ['support', 'Maintain and improve', 'Use feedback to keep the software useful as needs evolve.']].map(([i, t, p]) => `<article>${icon(i)}<h3>${t}</h3><p>${p}</p></article>`).join('')}</div>`;
   const home = `
     <section class="ribbon-hero" aria-labelledby="hero-title">
       <img class="ribbon-hero__art" src="${url('/assets/artworks/glass-ribbon.webp')}" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
       <div class="container ribbon-hero__inner">
         <h1 id="hero-title">Intelligent systems<br><span>for everyday challenges.</span></h1>
-        <p>Software engineering company creating intelligent software and automation to simplify complex work, through tailored client solutions and products developed in-house.</p>
-        <div class="button-row">${link('Learn more', '/products/')}</div>
+        <p>Software engineering company building products for shared business challenges and tailored software for specific needs—connecting workflows from end to end.</p>
+        <div class="button-row">${link('See what we build', '/products/')}</div>
       </div>
     </section>
     <section class="section home-who" id="who-we-are" aria-labelledby="who-title">
       <div class="container about-intro__grid">
         <div class="about-intro__copy">
-          <h2 id="who-title">Software shaped around real work</h2>
+          <h2 id="who-title">Built for challenges people share</h2>
           <p class="lead">Thoughtful engineering.<br>Practical outcomes.</p>
-          <p>A decade of building websites for clients one project at a time taught us to look beyond the individual project. Software can create more value when it brings people with shared needs together and supports their work end to end.</p>
-          <p>That insight guides us: we build and maintain solutions around common needs, while continuing to take on tailored projects when a challenge calls for a specific approach.</p>
-          <a class="text-link" href="${url('/about/')}">Learn more about LIOCER</a>
+          <p>More than a decade of building websites for clients one project at a time showed us how often the same challenges appear across different organizations.</p>
+          <p>Software can create greater value when people who share those challenges can use one well-maintained solution across the full workflow. That’s why we build products around common needs and deliver tailored projects where the work calls for a specific approach.</p>
+          ${link('Our story', '/about/')}
         </div>
         <div class="about-intro__art" aria-hidden="true">${art('about', '')}</div>
       </div>
     </section>
     <section class="section home-what" id="what-we-do" aria-labelledby="what-title">
       <div class="container">
-        <div class="section-heading"><h2 id="what-title">Better ways to get work done</h2><p>We build software, connect systems and automate the work between them.</p></div>
+        <div class="section-heading"><h2 id="what-title">Designed around the whole workflow</h2><p>From products built for shared needs to tailored projects, we connect the systems and steps people depend on.</p></div>
         <div class="home-capabilities">
-          <article>${icon('build')}<h3>Tailored software</h3><p>Business applications, portals and internal tools designed around your users, processes and goals.</p></article>
-          <article>${icon('integrations')}<h3>Intelligent automation</h3><p>Connected systems and automated workflows that reduce repeated data entry and manual follow-up.</p></article>
-          <article>${icon('products')}<h3>Product development</h3><p>Software products developed in-house, with focused design, continued improvement and support for daily use.</p></article>
+          <article>${icon('build')}<h3>Tailored software</h3><p>Applications, portals and internal tools shaped around a specific organization’s people, processes and goals.</p></article>
+          <article>${icon('integrations')}<h3>Connected workflows</h3><p>Integrations and automation that link everyday tasks, reduce repeat admin and keep work moving across the process.</p></article>
+          <article>${icon('products')}<h3>Products for shared needs</h3><p>Purpose-built software for recurring challenges, developed and maintained as those needs evolve.</p></article>
         </div>
       </div>
     </section>
     <section class="section home-process" id="how-we-work" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-heading"><h2 id="how-title">A clear path from idea to impact</h2><p>We start by understanding the problem, build in manageable stages and keep improving through use and feedback.</p></div>
+        <div class="section-heading"><h2 id="how-title">Built with users. Improved in practice.</h2><p>From discovery to ongoing care, we work with the people who know the problem and support the solution as needs change.</p></div>
         ${process()}
       </div>
     </section>${closing()}`;
